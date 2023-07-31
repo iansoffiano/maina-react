@@ -12,10 +12,21 @@ export default {
         'abu-3': '#ACB5BD',
       },
       fontFamily: {
-        roboto: ['"Roboto"', 'sans-serif'],      
+        roboto: ['"Roboto"', 'sans-serif'],
       },
     },
   },
+  variants: {
+    gridColumn: ['responsive', 'hover'],
+    gridColumnStart: ['responsive', 'hover'],
+    gridColumnEnd: ['responsive', 'hover'],
+  },
+  safelist: [
+    {
+      pattern: /col-span-.*/,
+      variants: ['lg', 'sm', 'md', 'lg', 'xl'],
+    },
+  ],
   plugins: [],
 }
 
