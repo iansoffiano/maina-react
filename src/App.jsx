@@ -3,6 +3,7 @@ import Button from "./components/Button/Button";
 import Column from "./components/Column/Column";
 import Container from "./components/Container/Container";
 import InputText from "./components/InputText/InputText";
+import Checkbox from "./components/RadioCheckBox/Checkbox";
 import Row from "./components/Row/Row";
 import SelectOption from "./components/SelectOption/SelectOption";
 import { itemList } from './contents'
@@ -28,6 +29,16 @@ function App() {
 						<Button value="Test Parsing props" appereance="primary" />
 						<Button value="Ini button secondary" appereance="secondary" />
 					</div>
+				</Container>
+				<Container>
+					<Row>
+						<Column lg="6">
+							<div className="flex items-center gap-2">
+								<Checkbox label="Text label" value="checkbox text" name="checkboxName" checked={true} />
+								<Checkbox label="Text label 2" value="checkbox text 2" name="checkboxName2" />
+							</div>
+						</Column>
+					</Row>
 				</Container>
 			</section>
 			<section>

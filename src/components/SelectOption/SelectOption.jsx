@@ -5,9 +5,12 @@ import { itemList } from "../../contents";
 
 const SelectOption = ({ labelName, placeHolder, options }) => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [selected, setSelected] = useState(placeHolder)
 
-	const getDisplay = () => {
-		return placeHolder;
+	const getDisplay = (str) => {
+		setSelected(str)
+		setIsOpen(false)
+		//return placeHolder;
 	};
 
 	return (
@@ -17,7 +20,7 @@ const SelectOption = ({ labelName, placeHolder, options }) => {
 				className="h-[56px] px-5 py-3 border border-abu-2 hover:border-abu-2 relative w-full text-left bg-transparent"
 				onClick={(e) => setIsOpen(!isOpen)}
 			>
-				{getDisplay()}
+				{selected}
 				<span className="absolute inset-y-0 right-0 mr-3 flex items-center">
 					<ArrowDown />
 				</span>
@@ -33,7 +36,7 @@ const SelectOption = ({ labelName, placeHolder, options }) => {
 							return (
 								<li
 									className="py-2 px-3 cursor-pointer hover:bg-abu-1"
-									key={option.id}
+									key={option.id} onClick={() => getDisplay(option.name)}
 								>
 									{option.name}
 								</li>
